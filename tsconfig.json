@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@api/*": ["src/app/api/*"],
+      "@features/*": ["src/app/features/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@store/*": ["src/app/features/shopping-cart/store/*"],
+      "@models/*": ["src/app/models/*"],
+      "@layout/*": ["src/app/layout/*"],
+      "@envs/*": ["src/environments/*"]
+    },
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -13,7 +22,6 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

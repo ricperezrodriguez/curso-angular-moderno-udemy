@@ -14,13 +14,18 @@
         "outputPath": "dist/angular-moderno-udemy",
         "index": "./src/index.html",
         "browser": "./src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [],
         "tsConfig": "tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
             "input": "public"
+          },
+          {
+            "glob": "**/*",
+            "input": "src/assets",
+            "output": "assets"
           }
         ],
         "styles": ["./src/styles.scss"],

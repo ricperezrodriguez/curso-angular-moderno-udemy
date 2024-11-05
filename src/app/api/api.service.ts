@@ -18,9 +18,8 @@ export class APIService {
    * @returns {Observable<T>} An observable of the requested resource
    */
   public getById<T>(endpoint: string, params?: HttpParams): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .get<T>(url, this._createOptions({ params }))
+      .get<T>(endpoint, this._createOptions({ params }))
       .pipe(catchError(this._handleError));
   }
 
@@ -31,9 +30,8 @@ export class APIService {
    * @returns {Observable<T>} An observable of the requested resources
    */
   public get<T>(endpoint: string, params?: HttpParams): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .get<T>(url, this._createOptions({ params }))
+      .get<T>(endpoint, this._createOptions({ params }))
       .pipe(catchError(this._handleError));
   }
 
@@ -49,9 +47,8 @@ export class APIService {
     body?: T,
     options?: HttpOptions
   ): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .post<T>(url, body, this._createOptions(options))
+      .post<T>(endpoint, body, this._createOptions(options))
       .pipe(catchError(this._handleError));
   }
 
@@ -67,9 +64,8 @@ export class APIService {
     body?: T,
     options?: HttpOptions
   ): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .put<T>(url, body, this._createOptions(options))
+      .put<T>(endpoint, body, this._createOptions(options))
       .pipe(catchError(this._handleError));
   }
 
@@ -85,9 +81,8 @@ export class APIService {
     body?: T,
     options?: HttpOptions
   ): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .patch<T>(url, body, this._createOptions(options))
+      .patch<T>(endpoint, body, this._createOptions(options))
       .pipe(catchError(this._handleError));
   }
 
@@ -98,9 +93,8 @@ export class APIService {
    * @returns {Observable<T>} An observable of the deletion response
    */
   public delete<T>(endpoint: string, options?: HttpOptions): Observable<T> {
-    const url = `${endpoint}`;
     return this._http
-      .delete<T>(url, this._createOptions(options))
+      .delete<T>(endpoint, this._createOptions(options))
       .pipe(catchError(this._handleError));
   }
 

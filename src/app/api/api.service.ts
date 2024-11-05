@@ -6,11 +6,9 @@ interface HttpOptions {
   headers?: HttpHeaders;
   params?: HttpParams;
 }
-
 @Injectable({ providedIn: 'root' })
 export class APIService {
   private readonly _http = inject(HttpClient);
-
   /**
    * Retrieves a single resource by its identifier
    * @param {string} endpoint - The API endpoint

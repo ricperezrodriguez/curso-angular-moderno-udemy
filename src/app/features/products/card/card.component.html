@@ -1,7 +1,7 @@
 <div class="product-card">
   <div class="w-[320px] h-[430px] overflow-hidden bg-white rounded">
     <a class="product-image-link" [routerLink]="['/products', (product.id)]">
-      <img class="product-image" src="{{ product.image }}" alt="{{ product.title }}" />
+      <img class="product-image" [src]="product.image" [alt]="product.title" />
     </a>
     <div class="px-6 py-4">
       <div class="text-xl font-bold h-[60px] line-clamp-2">

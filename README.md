@@ -1,101 +1,75 @@
-# AngularModernoUdemy
+# Angular Moderno con Dominicode
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+Bienvenido al repositorio del curso de Angular Moderno con Dominicode. Aquí aprenderás a construir aplicaciones modernas utilizando Angular y las mejores prácticas de la industria.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Introducción
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+Este curso está diseñado para desarrolladores que desean mejorar sus habilidades en Angular y aprender a utilizar herramientas modernas como Nx para la gestión de proyectos.
 
-## Run tasks
+## Requisitos
 
-To run the dev server for your app, use:
+- Conocimientos básicos de JavaScript y TypeScript
+- Familiaridad con Angular
+- Node.js y npm instalados en tu máquina
+
+## Comenzando
+
+Para iniciar el servidor de desarrollo de tu aplicación, utiliza:
 
 ```sh
 npx nx serve angular-moderno-udemy
 ```
 
-To create a production bundle:
+Para crear un paquete de producción:
 
 ```sh
 npx nx build angular-moderno-udemy
 ```
 
-To see all available targets to run for a project, run:
+## Añadir nuevos proyectos
 
-```sh
-npx nx show project angular-moderno-udemy
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
+Puedes añadir nuevos proyectos a tu espacio de trabajo utilizando los plugins de Nx. Para generar una nueva aplicación, usa:
 
 ```sh
 npx nx g @nx/angular:app demo
 ```
 
-To generate a new library, use:
+Para generar una nueva librería:
 
 ```sh
 npx nx g @nx/angular:lib mylib
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+## Configuración de CI
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Set up CI!
-
-### Step 1
-
-To connect to Nx Cloud, run the following command:
+Conecta tu proyecto a Nx Cloud para un CI rápido y escalable:
 
 ```sh
 npx nx connect
 ```
 
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
+Configura un flujo de trabajo de CI para tu espacio de trabajo:
 
 ```sh
 npx nx g ci-workflow
 ```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Instalar Nx Console
 
-## Install Nx Console
+Nx Console es una extensión para editores que mejora tu experiencia de desarrollo. Está disponible para VSCode e IntelliJ.
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+[Instalar Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Recursos útiles
 
-## Useful links
+- [Documentación de Angular](https://angular.io/docs)
+- [Documentación de Nx](https://nx.dev)
+- [Comunidad de Nx en Discord](https://go.nx.dev/community)
 
-Learn more:
+## Conéctate con Dominicode
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- [Canal de YouTube de Dominicode](https://www.youtube.com/@Dominicode)
+- [Síguenos en Twitter](https://twitter.com/Dominicode)
+- [Únete a nuestro grupo en LinkedIn](https://www.linkedin.com/in/dominicode)
 
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+¡Esperamos que disfrutes del curso y aprendas mucho sobre Angular moderno!

@@ -10,6 +10,7 @@ import {
   ApplicationConfig,
   LOCALE_ID,
   provideExperimentalZonelessChangeDetection,
+  provideZoneChangeDetection,
 } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
@@ -34,7 +35,7 @@ export const appConfig: ApplicationConfig = {
       timeOut: 1500,
       preventDuplicates: false,
     }),
-    provideExperimentalZonelessChangeDetection(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideHttpClient(withFetch(), withInterceptorsFromDi()),
     provideRouter(appRoutes),
   ],

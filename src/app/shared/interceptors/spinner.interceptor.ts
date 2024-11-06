@@ -19,14 +19,10 @@ export class SpinnerInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log('Spinner show');
     this._spinnerService.show();
 
-    return next.handle(request).pipe(
-      finalize(() => {
-        console.log('Spinner hide');
-        this._spinnerService.hide();
-      })
-    );
+    return next
+      .handle(request)
+      .pipe(finalize(() => this._spinnerService.hide()));
   }
 }

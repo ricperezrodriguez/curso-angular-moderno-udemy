@@ -7,10 +7,6 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('../app/features/products/products.routes'),
   },
   {
-    path: 'checkout',
-    loadChildren: () => import('../app/features/checkout/checkout.routes'),
-  },
-  {
     path: '',
     redirectTo: '/products',
     pathMatch: 'full',

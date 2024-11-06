@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { AsyncPipe, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from '@features/categories/categories.service';
@@ -6,7 +6,7 @@ import { CategoryService } from '@features/categories/categories.service';
 @Component({
   selector: 'app-category-filter',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, AsyncPipe],
   styleUrl: './category-filter.component.scss',
   template: `
     <h2 class="heading">
@@ -21,7 +21,7 @@ import { CategoryService } from '@features/categories/categories.service';
         </button>
       </li>
       <!-- TODO: Can be an  component -->
-      <li *ngFor="let category of categories(); trackBy: trackById">
+      <li *ngFor="let category of categories$ | async; trackBy: trackById">
         <button type="button" (click)="onClick(category)" class="btn btn-hover">
           {{ category }}
         </button>
@@ -30,7 +30,7 @@ import { CategoryService } from '@features/categories/categories.service';
   `,
 })
 export class CategoryFilterComponent {
-  readonly categories = inject(CategoryService).categories;
+  readonly categories$ = inject(CategoryService).categories$;
 
   private readonly _router = inject(Router);
 

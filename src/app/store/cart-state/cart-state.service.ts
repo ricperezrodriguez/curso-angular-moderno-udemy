@@ -43,7 +43,7 @@ export class CartStateService {
     const currentProducts = this._products();
 
     const existingProductIndex = currentProducts.findIndex(
-      (product: Product) => product.id === product.id
+      (p: Product) => p.id === product.id
     );
 
     if (existingProductIndex >= 0) {

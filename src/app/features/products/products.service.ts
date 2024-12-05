@@ -7,9 +7,6 @@ import { APIService } from './../../api/api.service';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
-  // private _allProducts$ = new BehaviorSubject<Product[]>([]);
-  // private _filteredProducts$ = new BehaviorSubject<Product[]>([]);
-
   private readonly _allProducts = signal<Product[]>([]);
   private readonly _filteredProducts = signal<Product[]>([]);
 
@@ -24,8 +21,6 @@ export class ProductsService {
         tap((products: Product[]) => {
           this._allProducts.set(products);
           this._filteredProducts.set(products);
-          // this._allProducts$.next(products);
-          // this._filteredProducts$.next(products);
         })
       )
       .subscribe();
@@ -36,18 +31,13 @@ export class ProductsService {
   }
 
   filterProductsByCategory(category: string): void {
-    if (category === 'all') {
+    if (category.toLowerCase() === 'all') {
       this._filteredProducts.set(this._allProducts());
-      // this._filteredProducts$.next(this._allProducts$.value);
     } else {
       const filtered = this._allProducts().filter(
         (product) => product.category === category
       );
       this._filteredProducts.set(filtered);
-      // const filtered = this._allProducts$.value.filter(
-      //   (product) => product.category === category
-      // );
-      // this._filteredProducts$.next(filtered);
     }
   }
 

@@ -3,7 +3,7 @@ import { environment } from '@envs/environment';
 
 import { Product } from '@features/products/product.interface';
 import { map, Observable, tap } from 'rxjs';
-import { APIService } from './../../api/api.service';
+import { APIService } from '@dominicode/api';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {

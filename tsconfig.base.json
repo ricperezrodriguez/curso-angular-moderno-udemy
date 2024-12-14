@@ -16,6 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@api/*": ["apps/angular-moderno-udemy/src/app/api/*"],
+      "@dominicode/api": ["libs/api/src/index.ts"],
+      "@dominicode/ui": ["libs/shared/ui/src/index.ts"],
+      "@dominicode/ui/add-to-cart": ["libs/shared/ui/add-to-cart/src/index.ts"],
+      "@dominicode/ui/footer": ["libs/shared/ui/footer/src/index.ts"],
+      "@dominicode/ui/header": ["libs/shared/ui/header/src/index.ts"],
       "@envs/*": ["apps/angular-moderno-udemy/src/environments/*"],
       "@features/*": ["apps/angular-moderno-udemy/src/app/features/*"],
       "@layout/*": ["apps/angular-moderno-udemy/src/app/layout/*"],

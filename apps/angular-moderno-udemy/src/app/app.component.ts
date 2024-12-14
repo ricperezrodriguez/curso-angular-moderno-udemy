@@ -1,9 +1,9 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { FooterComponent } from '@dominicode/ui/footer';
+import { HeaderComponent } from '@dominicode/ui/header';
 import { CategoryFilterComponent } from '@features/categories/category-filter/category-filter.component';
-import { FooterComponent } from '@layout/footer/footer.component';
-import { HeaderComponent } from '@layout/header/header.component';
 import HeroComponent from '@layout/hero/hero.component';
 import { SpinnerComponent } from '@shared/ui/spinner/spinner.component';
 import { CartStateService } from '@store/cart-state/cart-state.service';

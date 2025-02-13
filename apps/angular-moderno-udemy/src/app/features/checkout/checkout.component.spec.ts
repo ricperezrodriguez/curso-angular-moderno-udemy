@@ -1,95 +1,87 @@
-import { Component } from "@angular/core";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { CheckoutService } from "@features/checkout/checkout.service";
-import { CartStateService } from "@store/cart-state/cart-state.service";
-
-// @Component({
-//   selector: 'app-remove-product',
-//   standalone: true,
-//   template: '<button (click)="clickRemoveProduct.emit(123)">remove</button>'
-// })
-// class MockRemoveProductComponent {
-//   clickRemoveProduct = { emit: jest.fn() };
-// }
-
-  @Component({
-    selector: 'app-checkout',
-    standalone: true,
-    template: '<button (click)="clickRemoveProduct.emit(123)">remove</button>',
-  })
-  class MockCheckoutComponent {
-
-    onProceedToPay(): void {
-      console.log('onProceedToPay');
-    }
-
-    clearAll(): void {
-      console.log('clearAll');
-    }
-
-    onRemoveProduct(productId: number) {
-      console.log(productId);
-    }
-  }
-
-const mockCheckoutService = {
-  processPay: jest.fn()
-};
+import { TestBed } from "@angular/core/testing";
+import { CartStateService } from '@store/cart-state/cart-state.service';
+import CheckoutComponent from './checkout.component';
+import { CheckoutService } from "./checkout.service";
 
 const mockCartStateService = {
   clearCart: jest.fn(),
-  cartStore: jest.fn(() => ({
-    products: [{
-      id: 1,
-      name: 'Test Product',
-      description: 'Test Description',
-      price: 100,
-      quantity: 1
-    }],
-    totalAmount: 100,
-    productsCount: 1
-  }))
+  products: [],
+  totalAmount: 0,
+  productsCount: 0
 };
+
+const mockCheckoutService = {
+  processPay: jest.fn()
+}
 
 
 describe('CheckoutComponent', () => {
-  let component: MockCheckoutComponent;
-  let fixture: ComponentFixture<MockCheckoutComponent>;
+  let component: CheckoutComponent;
 
-//   jest.mock('@shared/ui/remove/svg/remove-svg.component', () => {
-//   class MockRemoveSVGComponent {}
-//   return {
-//     RemoveSVGComponent: Component({
-//       standalone: true,
-//       selector: 'app-remove-svg',
-//       template: '<svg></svg>'
-//     })(MockRemoveSVGComponent)
-//   };
-// });
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [CheckoutComponent],
+      providers: [
+        { provide: CartStateService, useValue: mockCartStateService },
+      { provide: CheckoutService, useValue: mockCheckoutService }],
+    }).compileComponents();
 
-  beforeEach( () => {
-     TestBed.configureTestingModule({
-       imports: [MockCheckoutComponent],
-       providers: [
-         { provide: CartStateService, useValue: mockCartStateService },
-         { provide: CheckoutService, useValue: mockCheckoutService },
-       ],
-     }).compileComponents();
-
-    fixture = TestBed.createComponent(MockCheckoutComponent);
+     const fixture = TestBed.createComponent(CheckoutComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    
+    jest.clearAllMocks();
   })
 
-  it('should create', () => {
-    const myMock = jest.fn();
-    // myMock.mockReturnValueOnce('true').mockReturnValueOnce('false');
-      
-    console.log(myMock());
-    console.log(myMock());
-    // console.log(myMock()); // undefined
-    // console.log(myMock()); // undefined
+  describe('onProceedPay', () => {
+    it('call checkout service with cart store', () => {
+      component.onProceedToPay();
+      expect(mockCheckoutService.processPay).toHaveBeenCalledWith(component.cartStore)
+      })
+  })
 
-    expect(myMock.mock.calls.length).toBe(2);
+  describe('clearAll', () => {
+    it('call cart service to clear cart', () => {
+      component.clearAll();
+      expect(mockCartStateService.clearCart).toHaveBeenCalled();
+    })
   });
-});
+
+  describe('onRemoveProduct', () => { 
+    it('log product id', () => {
+      const consoleSpy = jest.spyOn(console, 'log');
+      const testProductId = 123; 
+
+      component.onRemoveProduct(testProductId);
+      expect(consoleSpy).toHaveBeenCalledWith(testProductId);
+    })
+  })
+
+
+})
+
+// describe('CheckoutComponent', () => {
+//   it('should create', () => {
+//     // const myMockFn = jest.fn(x => x * 2);
+//     const myMockFn = jest
+//       .fn((y?,x?) => 'Hello')
+//       // .mockImplementationOnce(() => 'first call')
+//       // .mockImplementationOnce(() => 'second call')
+//     myMockFn();
+//     myMockFn('Angular', 19);
+
+//     expect(myMockFn).toHaveBeenCalled();
+//     expect(myMockFn).toHaveBeenCalledTimes(2);
+//     expect(myMockFn).toHaveBeenCalledWith('Angular', 19);
+//     expect(myMockFn).toHaveReturnedWith('Hello')
+
+
+
+
+//     // console.log(myMockFn.mock.calls.length)
+//     // console.log(myMockFn.mock.results)
+//     // console.log(myMockFn.mock.instances)
+    
+
+//   });
+// });
+

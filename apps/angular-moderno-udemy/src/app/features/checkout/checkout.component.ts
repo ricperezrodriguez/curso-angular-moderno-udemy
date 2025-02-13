@@ -7,7 +7,7 @@ import { CartStateService } from '@store/cart-state/cart-state.service';
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [ SlicePipe, CurrencyPipe, RemoveProductComponent],
+  imports: [RemoveProductComponent, SlicePipe, CurrencyPipe],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
 })

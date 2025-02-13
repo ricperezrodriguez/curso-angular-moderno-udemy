@@ -15,6 +15,9 @@ import { RemoveSVGComponent } from './svg/remove-svg.component';
 })
 export class RemoveProductComponent {
   clickRemoveProduct = output();
+  constructor() {
+    console.log('XXXXXXXXXX -> RemoveProductComponent');
+  }
   onRemoveProduct(): void {
     this.clickRemoveProduct.emit();
   }

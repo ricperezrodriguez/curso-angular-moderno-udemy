@@ -1,8 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { APIService } from '@api/api.service';
 import { environment } from '@envs/environment';
-import { tap } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CategoryService {

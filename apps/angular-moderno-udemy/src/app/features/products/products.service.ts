@@ -1,9 +1,9 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { environment } from '@envs/environment';
+import { environment } from '../../../environments/environment';
 
-import { Product } from '@features/products/product.interface';
+import { APIService } from '@dominicode/api';
 import { map, Observable, tap } from 'rxjs';
-import { APIService } from './../../api/api.service';
+import { Product } from './product.interface';
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {

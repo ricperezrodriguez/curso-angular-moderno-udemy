@@ -1,18 +1,17 @@
-import { AsyncPipe, CurrencyPipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Product } from '@features/products/product.interface';
-import { ProductsService } from '@features/products/products.service';
-import { CartStateService } from 'src/app/store/cart-state/cart-state.service';
-
+import { AddToCartComponent } from '@dominicode/ui/add-to-cart';
 import { STAR_SVG } from '@shared/constants/star-svg.constants';
-import { AddToCartComponent } from '@shared/ui/add-to-cart/add-to-cart.component';
+import { CartStateService } from '@store/cart-state/cart-state.service';
+import { Product } from '../product.interface';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [AddToCartComponent, CurrencyPipe, AsyncPipe],
+  imports: [AddToCartComponent, CurrencyPipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss',
 })

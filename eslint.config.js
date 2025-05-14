@@ -14,7 +14,16 @@ module.exports = [
         'error',
         {
           enforceBuildableLibDependency: true,
-          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?js$'],
+          allow: [
+            '^@store/.*$',
+            '^@feature/.*$',
+            '^@layout/.*$',
+            '^@model/.*$',
+            '^@shared/.*$',
+            '^@api/.*$',
+            '^@env/.*$',
+            '^.*/eslint(\\.base)?\\.config\\.[cm]?js$',
+          ],
           depConstraints: [
             {
               sourceTag: '*',
@@ -29,5 +38,25 @@ module.exports = [
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
     // Override or add rules here
     rules: {},
+  },
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+      ],
+    },
+    languageOptions: { parser: require('jsonc-eslint-parser') },
+  },
+  {
+    files: ['**/*.json'],
+    rules: {
+      '@nx/dependency-checks': [
+        'error',
+        { ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'] },
+      ],
+    },
+    languageOptions: { parser: require('jsonc-eslint-parser') },
   },
 ];

@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { APIService } from '@api/api.service';
-import { environment } from '@envs/environment';
+import { APIService } from '@dominicode/api';
 import { tap } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class CategoryService {
